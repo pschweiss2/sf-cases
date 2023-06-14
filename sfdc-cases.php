@@ -14,7 +14,7 @@ function sfdc_cases_menu() {
         'SFDC Cases',             // Menu title
         'manage_options',         // Capability required to access the menu
         'sfdc-cases',             // Menu slug
-        'sfdc_cases_settings',    // Callback function to display the settings page
+        'sfdc_cases_home_page',   // Callback function to display the settings page
         'dashicons-share-alt',    // Menu icon
         80                        // Menu position
     );
@@ -32,14 +32,27 @@ function sfdc_cases_menu() {
     add_submenu_page(
         'sfdc-cases',             // Parent menu slug
         'SFDC Cases',             // Page title
-        'Case',                   // Menu title
+        'Create A Case',          // Menu title
         'read',                   // Capability required to access the page
         'sfdc-cases-case',        // Menu slug
         'sfdc_cases_case_page'    // Callback function to display the case page
     );
 }
 add_action('admin_menu', 'sfdc_cases_menu');
-
+// Home Page callback function
+function sfdc_cases_home_page(){
+    $url = plugin_dir_url(__FILE__);
+?>
+<div class="wrap">
+<h1><img style="display: block; margin-left: auto; margin-right: auto;" src="$url.'assets/sfdc-cases-logo.png'" alt="" /></h1>
+<h2>Thank you for downloading SFDC Web-To-Case!</h2>
+<p>If you haven't done so, head to the settings page and input your Salesforce Org ID. Need help to find your org id? <a href="https://help.salesforce.com/s/articleView?id=000385215&amp;language=en_US&amp;type=1" target="_blank">Click Here to access the Salesforce help article on the topic.</a></p>
+<p>Once you have input your Org ID, you can open cases directly from WordPress.</p>
+<p>Version 1.0.0 only supports a basic case; future iterations may support fields such as Case Category, etc.</p>
+<p>&nbsp;</p>
+</div>
+<?php
+}
 // Settings page callback function
 function sfdc_cases_settings_page() {
     if (!current_user_can('manage_options')) {
