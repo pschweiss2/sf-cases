@@ -1,10 +1,12 @@
 <?php
 /*
-Plugin Name: SFDC Cases
-Description: Embeds the web-to-case function from Salesforce.
+Plugin Name: Web-To-Case Embed
+Description: Embeds the web-to-case function from Salesforce to the admin dashboard in Wordpress. Enabling a user to generate a case from WordPress.
 Version: 1.0
-Author: Your Name
-Author URI: Your Website
+Author: Peter Schweiss
+Author URI: pete.schweiss.net
+License: GPL-2.0-or-later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 // Create top-level menu item
@@ -44,7 +46,7 @@ function sfdc_cases_home_page(){
     $url = plugin_dir_url(__FILE__);
 ?>
 <div class="wrap">
-<h1><img style="display: block; margin-left: auto; margin-right: auto;" src="$url.'assets/sfdc-cases-logo.png'" alt="" /></h1>
+<h1><img style="display: block; margin-left: auto; margin-right: auto;" src="http://pete-playground.flywheelsites.com/wp-content/uploads/2023/06/sfdc-logo.png" alt="" /></h1>
 <h2>Thank you for downloading SFDC Web-To-Case!</h2>
 <p>If you haven't done so, head to the settings page and input your Salesforce Org ID. Need help to find your org id? <a href="https://help.salesforce.com/s/articleView?id=000385215&amp;language=en_US&amp;type=1" target="_blank">Click Here to access the Salesforce help article on the topic.</a></p>
 <p>Once you have input your Org ID, you can open cases directly from WordPress.</p>
